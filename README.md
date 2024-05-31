@@ -6,4 +6,4 @@ To try the demo:
 - Run `pnpm tsx src/index.ts`
 - Then you can ask: `What is the weather in New York?` or `What is the weather in London and Zürich?`
 
-Explanation of this demo can be found in my [How to Feed the Function Call Result Back to the Model with Vercel AI SDK](https://www.nico.fyi/blog/max-automatic-roundtrips-vercel-ai-sdk-simplify-tool-calling) blog post.
+Explanation of this demo can be found in my [The new maxAutomaticRoundtrips in Vercel AI SDK](https://www.nico.fyi/blog/max-automatic-roundtrips-vercel-ai-sdk-simplify-tool-calling) blog post.
