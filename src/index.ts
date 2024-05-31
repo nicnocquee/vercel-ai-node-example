@@ -66,34 +66,14 @@ async function main() {
 
     messages.push({ role: "user", content: userInput });
 
-    const { text, toolResults, toolCalls } = await generateText({
+    const { text } = await generateText({
       ...context,
+      maxAutomaticRoundtrips: 5,
       messages,
     });
 
-    if (toolResults && toolCalls) {
-      messages.push({
-        role: "assistant" as const,
-        content: toolCalls,
-      });
-
-      messages.push({
-        role: "tool" as const,
-        content: toolResults,
-      });
-
-      // console.dir(messages, { depth: null });
-
-      const { text: finalText } = await generateText({
-        ...context,
-        messages,
-      });
-      messages.push({ role: "assistant", content: finalText });
-      process.stdout.write(`Assistant: ${finalText}\n`);
-    } else {
-      messages.push({ role: "assistant", content: text });
-      process.stdout.write(`Assistant: ${text}\n`);
-    }
+    messages.push({ role: "assistant", content: text });
+    process.stdout.write(`Assistant: ${text}\n`);
   }
 }
 
