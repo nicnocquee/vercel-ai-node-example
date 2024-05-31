@@ -1,8 +1,7 @@
 To try the demo:
 
 - Clone the repository
-- Run `touch .env`
-- Add your OpenAI API key to `.env`
+- Copy `.env.example` to `.env` and fill in your OpenAI API key
 - Run `pnpm install`
 - Run `pnpm tsx src/index.ts`
 
